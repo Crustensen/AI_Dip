@@ -273,6 +273,23 @@ html {
   color: #101010;
 }
 
+.page-footer {
+  display: flex;
+  justify-content: center;
+  padding: 22px 0 12px;
+}
+
+.alpha-badge {
+  padding: 8px 12px;
+  border: 2px solid #101010;
+  background: #ff6a00;
+  color: #101010;
+  box-shadow: 3px 3px 0 #101010;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
 button:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
