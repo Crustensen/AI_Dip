@@ -1,0 +1,294 @@
+/* Experimental neubrutalist skin. Remove this import to restore the previous design. */
+:root {
+  --paper: #ffffff;
+  --white: #ffffff;
+  --ink: #101010;
+  --muted: #101010;
+  --faint: #101010;
+  --line: #101010;
+  --orange: #ff6a00;
+  --orange-dark: #e95a00;
+  --soft: #ff6a00;
+  --shadow: 6px 6px 0 #101010;
+}
+
+body,
+html {
+  background: #ffffff;
+  color: #101010;
+}
+
+.chat-card,
+.settings-card,
+.progress-card,
+.mascot-card {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 6px 6px 0 #101010;
+}
+
+.chat-topbar {
+  border-bottom: 2px solid #101010;
+  background: #ff6a00;
+}
+
+.avatar-small,
+.message-avatar {
+  border: 2px solid #101010;
+  background: #ffffff;
+  color: #101010;
+}
+
+.online-label,
+.live-tag {
+  color: #101010;
+}
+
+.online-label i,
+.live-tag span {
+  border: 1px solid #101010;
+  background: #ffffff;
+}
+
+.conversation {
+  background: #ffffff;
+}
+
+.welcome-symbol {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ff6a00;
+  color: #101010;
+}
+
+.welcome-symbol i {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+  color: #101010;
+}
+
+.welcome-overline,
+.message-sender {
+  color: #101010;
+}
+
+.welcome-prompt {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+  color: #101010;
+}
+
+.message-bubble,
+.user-bubble {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+  color: #101010;
+}
+
+.user-bubble {
+  background: #ff6a00;
+}
+
+.composer {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.composer:focus-within,
+.select-wrap:focus-within {
+  border-color: #101010;
+  box-shadow: 4px 4px 0 #ff6a00;
+}
+
+.composer textarea,
+.composer textarea:disabled {
+  background: #ffffff;
+  color: #101010;
+}
+
+.composer textarea::placeholder {
+  color: #555555;
+}
+
+.composer-hint,
+.char-count,
+.privacy-note,
+.field-help,
+.progress-meta,
+.progress-rationale,
+.side-footnote {
+  color: #101010;
+}
+
+.privacy-note svg,
+.mouth {
+  color: #101010;
+  border-color: #101010;
+}
+
+.typing-dots i {
+  background: #ff6a00;
+}
+
+.send-button {
+  width: 38px;
+  height: 38px;
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ff6a00;
+  color: #101010;
+  box-shadow: 3px 3px 0 #101010;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  background: #ff6a00;
+  box-shadow: 1px 1px 0 #101010;
+}
+
+.send-button:disabled {
+  border-color: #101010;
+  background: #ffffff;
+  color: #555555;
+}
+
+.section-index {
+  color: #101010;
+}
+
+.section-heading h2,
+.field-group > label {
+  color: #101010;
+}
+
+.select-wrap {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.select-wrap .select-icon {
+  color: #101010;
+}
+
+.select-wrap select,
+.select-wrap select:disabled {
+  background: #ffffff;
+  color: #101010;
+}
+
+.select-wrap > svg {
+  color: #101010;
+}
+
+.progress-number {
+  color: #101010;
+}
+
+.progress-track {
+  height: 10px;
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.progress-fill {
+  border-right: 2px solid #101010;
+  border-radius: 0;
+  background: #ff6a00;
+}
+
+.progress-fill span {
+  display: none;
+}
+
+.mascot-card {
+  background: #ff6a00;
+}
+
+.mascot-glow {
+  display: none;
+}
+
+.mascot-halo,
+.mascot-face {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 4px 4px 0 #101010;
+}
+
+.mascot-face::before,
+.mascot-face::after {
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.mascot-quote > span,
+.mascot-quote p,
+.mascot-caption,
+.mascot-sparkle {
+  color: #101010;
+}
+
+.mascot-sparkle {
+  font-weight: 800;
+}
+
+.new-session-button {
+  min-height: 48px;
+  border: 2px solid #101010;
+  border-radius: 0;
+  background: #ff6a00;
+  color: #101010;
+  box-shadow: 4px 4px 0 #101010;
+}
+
+.new-session-button:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  border-color: #101010;
+  background: #ff6a00;
+  box-shadow: 2px 2px 0 #101010;
+}
+
+.error-note,
+.demo-note {
+  border: 2px solid #101010;
+  border-radius: 0;
+}
+
+.error-note {
+  background: #ff6a00;
+  color: #101010;
+}
+
+.demo-note {
+  background: #ffffff;
+  color: #101010;
+}
+
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #101010;
+  outline-offset: 3px;
+}
+
+@media (min-width: 1100px) {
+  .mascot-card {
+    min-height: 156px;
+  }
+}
+
+@media (max-width: 590px) {
+  .send-button {
+    width: 32px;
+    height: 32px;
+  }
+}

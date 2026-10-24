@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './tweaks.css';
+import './brutalism.css';
 
 export const metadata: Metadata = {
   title: 'Виртуальный дипломат — тренажёр переговоров',
