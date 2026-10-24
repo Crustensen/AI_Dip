@@ -104,6 +104,276 @@
   background: #d95b2c;
 }
 
+.avatar-small svg,
+.message-avatar svg {
+  width: 70%;
+  height: 70%;
+}
+
+.welcome-avatar-person {
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  color: #c9562a;
+}
+
+.welcome-avatar-person svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1100px) {
+  .page-shell {
+    max-width: 1420px;
+    padding-right: 58px;
+    padding-left: 58px;
+  }
+
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 25px;
+  }
+
+  .chat-card,
+  .settings-card,
+  .progress-card,
+  .mascot-card {
+    border-radius: 12px;
+  }
+
+  .chat-topbar {
+    height: 74px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .chat-identity {
+    gap: 13px;
+  }
+
+  .avatar-small {
+    width: 42px;
+    height: 42px;
+  }
+
+  .avatar-small svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .chat-identity strong {
+    font-size: 14px;
+  }
+
+  .online-label,
+  .live-tag {
+    font-size: 11px;
+  }
+
+  .conversation {
+    min-height: 410px;
+    max-height: 590px;
+    padding: 38px 34px;
+  }
+
+  .welcome-symbol {
+    width: 66px;
+    height: 66px;
+    margin-bottom: 19px;
+  }
+
+  .welcome-avatar-person {
+    width: 34px;
+    height: 34px;
+  }
+
+  .welcome-overline {
+    font-size: 10px;
+  }
+
+  .welcome-state h2 {
+    margin-top: 12px;
+    font-size: 26px;
+  }
+
+  .welcome-state > p {
+    max-width: 440px;
+    font-size: 13px;
+  }
+
+  .welcome-prompt {
+    margin-top: 23px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .message-list {
+    gap: 22px;
+  }
+
+  .message-row {
+    gap: 10px;
+  }
+
+  .message-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .message-bubble {
+    padding: 14px 16px;
+  }
+
+  .message-sender {
+    margin-bottom: 7px;
+    font-size: 10px;
+  }
+
+  .message-bubble p {
+    font-size: 14px;
+  }
+
+  .composer {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .composer textarea {
+    min-height: 70px;
+    padding: 16px 16px 5px;
+    font-size: 13px;
+  }
+
+  .composer-footer {
+    min-height: 46px;
+    padding-right: 11px;
+    padding-left: 16px;
+  }
+
+  .composer-hint,
+  .char-count {
+    font-size: 10px;
+  }
+
+  .send-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .send-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .privacy-note {
+    padding: 16px 0;
+    font-size: 10px;
+  }
+
+  .privacy-note svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .side-panel {
+    gap: 14px;
+  }
+
+  .settings-card,
+  .progress-card {
+    padding: 20px 19px 18px;
+  }
+
+  .section-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .section-index {
+    font-size: 11px;
+  }
+
+  .section-heading h2 {
+    font-size: 14px;
+  }
+
+  .field-group {
+    gap: 8px;
+    margin-top: 15px;
+  }
+
+  .field-group > label {
+    font-size: 10px;
+  }
+
+  .select-wrap {
+    height: 42px;
+  }
+
+  .select-wrap select {
+    font-size: 13px;
+  }
+
+  .field-help {
+    font-size: 10px;
+  }
+
+  .progress-meta {
+    font-size: 12px;
+  }
+
+  .progress-number {
+    font-size: 28px;
+  }
+
+  .progress-track {
+    height: 7px;
+    margin: 8px 0 13px;
+  }
+
+  .progress-rationale {
+    min-height: 32px;
+    font-size: 10px;
+  }
+
+  .mascot-card {
+    min-height: 156px;
+    gap: 15px;
+    padding: 18px;
+  }
+
+  .mascot-image,
+  .mascot-fallback {
+    width: 91px;
+    height: 116px;
+  }
+
+  .mascot-quote > span {
+    font-size: 9px;
+  }
+
+  .mascot-quote p {
+    max-width: 180px;
+    font-size: 13px;
+  }
+
+  .new-session-button {
+    min-height: 48px;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .new-session-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .side-footnote {
+    font-size: 10px;
+  }
+}
+
 @media (max-width: 590px) {
   .page-shell {
     padding-top: 20px;
