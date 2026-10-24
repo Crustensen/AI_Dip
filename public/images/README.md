@@ -1,0 +1,1 @@
+Добавьте сюда изображения Алекса: `alex-neutral.png`, `alex-friendly.png`, `alex-thinking.png`, `alex-curious.png`, `alex-concerned.png` и `alex-happy.png`. Сайт использует CSS-заглушку, если нужного изображения пока нет.
