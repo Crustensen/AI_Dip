@@ -59,12 +59,6 @@ export default function Home() {
   }
 
   return <main className="page-shell">
-    <header className="site-header"><a className="brand" href="#top" aria-label="Виртуальный дипломат, на главную"><span className="brand-mark">V<span>.</span></span><span>Практика диалога</span></a><span className="header-pill"><i /> Учебный тренажёр</span></header>
-    <section className="hero" id="top">
-      <div className="eyebrow"><span className="eyebrow-line" /> ДИПЛОМАТИЯ НАЧИНАЕТСЯ С ДИАЛОГА <span className="eyebrow-line" /></div>
-      <h1>Виртуальный<br className="mobile-break" /> дипломат<span className="title-dot">.</span></h1>
-      <p className="hero-copy">Потренируйтесь вести переговоры, находить общий язык<br className="desktop-break" /> и добиваться взаимовыгодных решений.</p>
-    </section>
     <section className="workspace" aria-label="Тренажёр переговоров">
       <div className="chat-card">
         <div className="chat-topbar"><div className="chat-identity"><div className="avatar-small">А</div><div><strong>Алекс</strong><span className="online-label"><i /> Дипломат · {countryNames[country]}</span></div></div><div className="live-tag"><span /> {active ? 'Переговоры идут' : 'Готов к диалогу'}</div></div>
@@ -82,6 +76,5 @@ export default function Home() {
         <button type="button" className="new-session-button" onClick={resetNegotiation} disabled={loading}><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.2 7.2A6.5 6.5 0 0 0 4.8 5.5L3.5 7m0 0V3.8M3.5 7h3.2M3.8 12.8A6.5 6.5 0 0 0 15.2 14l1.3-1.5m0 0v3.2m0-3.2h-3.2" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round"/></svg> Начать новые переговоры</button><p className="side-footnote">{active ? 'Чтобы сменить сторону или стиль, начните новую встречу.' : 'Выберите сторону и стиль до начала диалога.'}</p>
       </aside>
     </section>
-    <footer className="page-footer"><span>ВИРТУАЛЬНЫЙ ДИПЛОМАТ <span>© 2026</span></span><span>Создано для практики, общения и поиска решений <span className="footer-star">✳</span></span></footer>
   </main>;
 }

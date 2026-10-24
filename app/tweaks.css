@@ -1,0 +1,111 @@
+:root {
+  --paper: #fff8f3;
+  --orange: #ec713b;
+  --orange-dark: #cf5425;
+}
+
+.page-shell {
+  padding-top: 34px;
+}
+
+.chat-card,
+.settings-card,
+.progress-card,
+.mascot-card {
+  border-color: #f0d7c8;
+}
+
+.chat-topbar {
+  background: linear-gradient(100deg, #fff0e5, #fff8f3 76%);
+  border-bottom-color: #f3dfd2;
+}
+
+.avatar-small,
+.message-avatar {
+  color: #b74923;
+  background: #ffe1cf;
+}
+
+.conversation {
+  background: linear-gradient(180deg, #fffefd, #fffaf7);
+}
+
+.welcome-symbol {
+  border-color: #f4c9ad;
+  background: linear-gradient(145deg, #fff0e4, #fffaf6);
+  color: #c9562a;
+}
+
+.welcome-symbol i {
+  background: #eb713b;
+}
+
+.composer {
+  border-color: #f0d6c6;
+}
+
+.composer:focus-within,
+.select-wrap:focus-within {
+  border-color: #e68a5c;
+  box-shadow: 0 0 0 2px #fff1e8;
+}
+
+.send-button {
+  background: #e96c36;
+}
+
+.section-index,
+.select-wrap .select-icon {
+  color: #d85d2e;
+}
+
+.select-wrap {
+  border-color: #f0d9cb;
+}
+
+.progress-number {
+  color: #d85629;
+}
+
+.progress-track {
+  background: #f9e4d7;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #ed9a5a, #e85c2c);
+}
+
+.progress-fill span {
+  background: #d84f27;
+}
+
+.mascot-card {
+  background:
+    radial-gradient(ellipse at 15% 110%, #ffd9c0 0, transparent 62%),
+    linear-gradient(120deg, #fff0e5, #fff8f2);
+}
+
+.mascot-glow {
+  background: #ffdfca;
+}
+
+.mascot-sparkle {
+  color: #dd7b48;
+}
+
+.new-session-button {
+  border-color: #df6b3c;
+  background: #e96c36;
+  color: #fff;
+}
+
+.new-session-button:hover:not(:disabled) {
+  border-color: #c95025;
+  background: #d95b2c;
+}
+
+@media (max-width: 590px) {
+  .page-shell {
+    padding-top: 20px;
+  }
+}
