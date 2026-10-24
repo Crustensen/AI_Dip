@@ -50,7 +50,7 @@ export default function Home() {
       if (response.status === 410) { setMessages([]); setProgress(0); setRationale('Начните с темы и своей цели переговоров.'); setMood('neutral'); }
       if (!response.ok) throw new Error(data.error || 'Не удалось получить ответ. Попробуйте ещё раз.');
       setMessages([...pending, { role: 'assistant', content: data.reply }]);
-      setProgress(data.progress); setRationale(data.rationale); setMood(data.mood); setNotice(data.demo ? 'Демо-режим · добавьте XAI_API_KEY для ответов Grok.' : '');
+      setProgress(data.progress); setRationale(data.rationale); setMood(data.mood); setNotice(data.demo ? 'Демо-режим · добавьте GROQ_API_KEY в настройки Vercel для ответов ИИ.' : '');
     } catch (e) {
       setMessages(messages); setTopic(text); setError(e instanceof Error ? e.message : 'Что-то пошло не так. Попробуйте ещё раз.'); setMood('concerned');
     } finally { setLoading(false); }

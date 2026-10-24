@@ -78,10 +78,11 @@ function clampResult(value: unknown, previousProgress: number) {
 }
 
 async function modelReply(turns: Turn[], country: Country, style: NegotiationStyle, progress: number) {
-  const apiKey = process.env.XAI_API_KEY;
+  const isGroq = Boolean(process.env.GROQ_API_KEY);
+  const apiKey = process.env.GROQ_API_KEY || process.env.XAI_API_KEY;
   if (!apiKey) return null;
-  const baseUrl = (process.env.XAI_BASE_URL || 'https://api.x.ai/v1').replace(/\/$/, '');
-  const model = process.env.XAI_MODEL || 'grok-3-mini';
+  const baseUrl = (process.env.AI_BASE_URL || (isGroq ? 'https://api.groq.com/openai/v1' : process.env.XAI_BASE_URL || 'https://api.x.ai/v1')).replace(/\/$/, '');
+  const model = process.env.AI_MODEL || (isGroq ? 'openai/gpt-oss-20b' : process.env.XAI_MODEL || 'grok-3-mini');
   const system = `Ты — Алекс, учебный симулятор дипломатического собеседника, представляющий ${countries[country].name}. Веди реалистичные, уважительные учебные переговоры. Стиль: ${styles[style]}. Язык: ${countries[country].language}. Контекст страны — ориентир для моделирования позиции государства, а не утверждение о характере его жителей. Не выдавай себя за реального чиновника и не представляй вымышленные факты как актуальную официальную позицию. При сомнении уточняй условия. Не проси личные данные, имена или контакты; если пользователь делится ими, не повторяй. Оценивай сближение позиций от 0 до 100 по достижению исходной цели и конкретности взаимных договорённостей; прогресс обычно должен быть монотонным. Текущий прогресс: ${progress}%. Ответь строго одним JSON-объектом по заданной схеме. rationale — коротко объясняет изменение прогресса на языке собеседника; mood — соответствующая эмоция.`;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 25_000);
@@ -97,7 +98,7 @@ async function modelReply(turns: Turn[], country: Country, style: NegotiationSty
     });
     if (!response.ok) {
       const status = response.status;
-      console.error('xAI API returned status', status);
+      console.error(`${isGroq ? 'Groq' : 'xAI'} API returned status`, status);
       throw new Error(status === 429 ? 'Сервис занят. Подождите немного и попробуйте ещё раз.' : 'ИИ сейчас недоступен. Попробуйте ещё раз через минуту.');
     }
     const payload: unknown = await response.json();
@@ -111,7 +112,7 @@ async function modelReply(turns: Turn[], country: Country, style: NegotiationSty
       if (error.name === 'AbortError') throw new Error('Ответ занимает слишком много времени. Попробуйте ещё раз.');
       throw error;
     }
-    console.error('xAI API request failed');
+    console.error(`${isGroq ? 'Groq' : 'xAI'} API request failed`);
     throw new Error('Не удалось связаться с ИИ. Попробуйте ещё раз через минуту.');
   } finally { clearTimeout(timeout); }
 }
@@ -153,7 +154,7 @@ export async function POST(request: NextRequest) {
     session.progress = result.progress;
     session.rationale = result.rationale;
     touch(session);
-    const response = NextResponse.json({ ...result, demo: !process.env.XAI_API_KEY }, { headers: { 'Cache-Control': 'no-store' } });
+    const response = NextResponse.json({ ...result, demo: !(process.env.GROQ_API_KEY || process.env.XAI_API_KEY) }, { headers: { 'Cache-Control': 'no-store' } });
     setSessionCookie(response, session.id, ipKey);
     return response;
   } catch (error) {
