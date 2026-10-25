@@ -1,6 +1,8 @@
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 
-export type Country = 'belarus' | 'usa';
+export type Country = 'belarus' | 'usa' | 'finland' | 'uk';
+export type AppMode = 'diplomat' | 'coach';
+export type ConversationTopic = 'nature' | 'culture' | 'geography';
 export type NegotiationStyle = 'friendly' | 'constructive' | 'firm';
 export type Mood = 'neutral' | 'friendly' | 'thinking' | 'curious' | 'concerned' | 'happy';
 export type Turn = { role: 'user' | 'assistant'; content: string };
@@ -8,6 +10,8 @@ export type NegotiationSession = {
   id: string;
   ipKey: string;
   country: Country;
+  mode: AppMode;
+  topic: ConversationTopic;
   style: NegotiationStyle;
   turns: Turn[];
   progress: number;
@@ -52,10 +56,10 @@ export function getSession(id: string, ipKey: string) {
   }
   return session;
 }
-export function createSession(ipKey: string, country: Country, style: NegotiationStyle) {
+export function createSession(ipKey: string, country: Country, style: NegotiationStyle, mode: AppMode, topic: ConversationTopic) {
   const now = Date.now();
   const session: NegotiationSession = {
-    id: randomBytes(24).toString('hex'), ipKey, country, style,
+    id: randomBytes(24).toString('hex'), ipKey, country, style, mode, topic,
     turns: [], progress: 0, rationale: 'Начните с темы и своей цели переговоров.', updatedAt: now, requests: 0,
   };
   sessions.set(session.id, session);
