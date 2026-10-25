@@ -124,6 +124,6 @@ export default function Home() {
         <button type="button" className="new-session-button" onClick={resetNegotiation} disabled={loading}><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.2 7.2A6.5 6.5 0 0 0 4.8 5.5L3.5 7m0 0V3.8M3.5 7h3.2M3.8 12.8A6.5 6.5 0 0 0 15.2 14l1.3-1.5m0 0v3.2m0-3.2h-3.2" stroke="currentColor" strokeWidth="1.45" strokeLinecap="round" strokeLinejoin="round"/></svg> {mode === 'coach' ? 'Начать новый разговор' : 'Начать новые переговоры'}</button><p className="side-footnote">{active ? mode === 'coach' ? 'Чтобы сменить язык или тему, начните новый разговор.' : 'Чтобы сменить сторону или стиль, начните новую встречу.' : mode === 'coach' ? 'Выберите язык и тему до начала практики.' : 'Выберите сторону и стиль до начала диалога.'}</p>
       </aside>
     </section>
-    <footer className="page-footer"><span className="footer-copyright">Alex AI. Все права принадлежат ГБОУ школе №23</span><span className="alpha-badge">ALPHA v. 1.1</span></footer>
+    <footer className="page-footer"><span className="footer-copyright">Alex AI. Все права принадлежат ГБОУ школе №23</span><span className="alpha-badge">ALPHA 2.0</span></footer>
   </main>;
 }
