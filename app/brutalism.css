@@ -290,6 +290,167 @@ html {
   letter-spacing: 0.1em;
 }
 
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 16px;
+  height: auto;
+  min-height: 78px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid #101010;
+}
+
+.brand {
+  width: fit-content;
+  gap: 10px;
+  color: #101010;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.brand i {
+  color: #ff6a00;
+  font-style: normal;
+}
+
+.school-logo {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #101010;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mode-switch {
+  display: flex;
+  align-self: center;
+  border: 2px solid #101010;
+  box-shadow: 3px 3px 0 #101010;
+}
+
+.mode-option {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 0;
+  background: #ffffff;
+  color: #101010;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.mode-option + .mode-option {
+  border-left: 2px solid #101010;
+}
+
+.mode-option.is-active {
+  background: #ff6a00;
+}
+
+.mode-option:disabled {
+  background: #eeeeee;
+  color: #858585;
+  cursor: not-allowed;
+}
+
+.header-status {
+  justify-self: end;
+  align-self: center;
+  color: #666666;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.voice-button {
+  min-height: 30px;
+  padding: 0 9px;
+  border: 2px solid #777777;
+  border-radius: 0;
+  background: #eeeeee;
+  color: #777777;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: not-allowed;
+}
+
+.composer-actions {
+  gap: 8px;
+}
+
+.page-footer {
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border-top: 2px solid #101010;
+}
+
+.footer-copyright {
+  color: #888888;
+  font-size: 11px;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .header-status {
+    display: none;
+  }
+
+  .brand {
+    font-size: 11px;
+  }
+
+  .school-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mode-option {
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
+  .voice-button {
+    padding: 0 6px;
+    font-size: 8px;
+  }
+
+  .footer-copyright {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .brand {
+    justify-self: center;
+  }
+
+  .mode-switch {
+    justify-self: center;
+  }
+
+  .composer-actions {
+    gap: 5px;
+  }
+
+  .page-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 button:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
